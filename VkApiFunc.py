@@ -41,7 +41,6 @@ def getMessageExternalId(session_api, user_id: int, internal_id: int, start_mess
         internal_id -= 199
         start_message_id = history['items'][-1]['id']
         history['items'].pop(-1)
-        print('bebreadwoaoa')
 
 
 def Parse(session_api, user_id: int, start_message_id: int, count: int) -> None:

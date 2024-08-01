@@ -33,23 +33,27 @@ def getMessageCount(session_api, user_id: int) -> int:
 def getMessageExternalId(session_api, user_id: int, internal_id: int) -> int:
 
     start_message_id = getLastMessage(session_api, user_id)['id']
-    count = internal_id
+    count = getMessageCount(session_api, user_id)
 
-    for c in range(getMessageCount(session_api, user_id)//200+1):
+    if 1 > internal_id:
+        print('[!] Error. internal_id must be > 0. First message_id was returned')
+        return getFirstMessage(session_api, user_id)['id']
+    if count < internal_id:
+        print('[!] Error. internal_id must be <= message_count. Last message_id was returned')
+        return getLastMessage(session_api, user_id)['id']
+
+    for c in range(count//200+1):
 
         history = (session_api.messages.getHistory(
-            count=200 if count > 199 else count,
+            count=200,
             user_id=user_id,
             start_message_id=start_message_id
         ))
-        count -= 199
         start_message_id = history['items'][-1]['id']
-        history['items'].pop(-1)
 
         for i in history['items']:
-            if i['conversation_message_id']==internal_id:
+            if i['conversation_message_id'] == internal_id:
                 return i['id']
-    return 0
 
 
 def Parse(session_api, user_id: int, start_message_id: int, count: int) -> None:
@@ -63,7 +67,7 @@ def Parse(session_api, user_id: int, start_message_id: int, count: int) -> None:
         if message_count < count:
             count = message_count+1
 
-        for c in range(count//200+1):
+        for c in range(count//199+1):
 
             history = (session_api.messages.getHistory(
                 count=200 if count > 199 else count,
@@ -103,12 +107,13 @@ session_api = vk_session.get_api()
     #293536875
     #381832378
     #464241833
+    #473379248
+    #2000000096
 
-user_id = 381832378
-
-a = getMessageExternalId(session_api, user_id, 196)
+user_id = 2000000096
+print(getMessageCount(session_api, user_id))
+a = getMessageExternalId(session_api, user_id, -1)
 print(a)
+
 #Parse(session_api, user_id, getLastMessage(session_api, user_id)['id'], 1000000000)
-
-
 

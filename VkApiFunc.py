@@ -3,22 +3,23 @@ import vk_api
 import csv
 
 
-def getFirstMessageId(session_api, user_id: int) -> int:
+
+def getFirstMessage(session_api, user_id: int) -> int:
     data = (session_api.messages.getHistory(
         count=1,
         user_id=user_id,
         rev=1
     ))
-    return data['items'][0]['id']
+    return data['items'][0]
 
 
-def getLastMessageId(session_api, user_id: int) -> int:
+def getLastMessage(session_api, user_id: int) -> int:
     data = (session_api.messages.getHistory(
         count=1,
         user_id=user_id,
         rev=0
     ))
-    return data['items'][0]['id']
+    return data['items'][0]
 
 
 def getMessageCount(session_api, user_id: int) -> int:
@@ -88,7 +89,9 @@ def Parse(session_api, user_id: int, start_message_id: int, count: int) -> None:
 
 
 
-token = 'vk1.a.Y8fU3ok8PPILm-8uIbSFwxE8PKflDK7behEcdmzu1Dd_dvQsOMemusSYmHvUKR6DiUpPeF3FpjnP_lxqtEi3r24v9elK8y3jMfPr1K_cT5AyYnEdhhuMpK2LVFzsMHb1MaFi6-haCewTm_Wt8kA8kC9GLD3r5vnpwbCiJOaXlXJPAj9gjaW437W_tOFsEFwLDkLyZ9I68sGk3vLw3HSyOQ'
+
+token = 'vk1.a.6kRn17RcZyO5gIVW9sVx8bjPr5nU1P7G2kEin1T0Y8u3fJVmQmq4xGwUnZIoQmJwLuQQDYT4YzzKeb7vuoaBBE-LRSAeY8PL0TPp18SSbM39eErT6SY3yZO6-aPBTZjn_5WU7u-T3d4KnxcuVW0PJbWYI9xgiz0NSry8eG6ZUeuJRaHpUgzwpaZpvfld2bcInc8cBLzEfSI5L8Ur_DIzKA'
+
 vk_session = vk_api.VkApi(token=token)
 session_api = vk_session.get_api()
     #293536875
@@ -96,7 +99,7 @@ session_api = vk_session.get_api()
     #464241833
 
 user_id = 2000000096
-Parse(session_api, user_id, getLastMessageId(session_api, user_id), 1000000000)
+Parse(session_api, user_id, getLastMessage(session_api, user_id)['id'], 1000000000)
 
 
 

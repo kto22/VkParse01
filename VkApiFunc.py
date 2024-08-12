@@ -95,25 +95,5 @@ def Parse(session_api, user_id: int, start_message_id: int, count: int) -> None:
         user = last_item['from_id']
         writer.writerow([user, message, id])
 
-    print("Done!")
-
-
-# -------------------------TESTS--------------------------------------------------
-
-token = 'vk1.a.6kRn17RcZyO5gIVW9sVx8bjPr5nU1P7G2kEin1T0Y8u3fJVmQmq4xGwUnZIoQmJwLuQQDYT4YzzKeb7vuoaBBE-LRSAeY8PL0TPp18SSbM39eErT6SY3yZO6-aPBTZjn_5WU7u-T3d4KnxcuVW0PJbWYI9xgiz0NSry8eG6ZUeuJRaHpUgzwpaZpvfld2bcInc8cBLzEfSI5L8Ur_DIzKA'
-
-vk_session = vk_api.VkApi(token=token)
-session_api = vk_session.get_api()
-    #293536875
-    #381832378
-    #464241833
-    #473379248
-    #2000000096
-
-user_id = 2000000096
-print(getMessageCount(session_api, user_id))
-a = getMessageExternalId(session_api, user_id, -1)
-print(a)
-
-#Parse(session_api, user_id, getLastMessage(session_api, user_id)['id'], 1000000000)
+    print("Done") 
 

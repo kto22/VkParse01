@@ -4,6 +4,7 @@ import vk_api
 import csv
 import os
 
+
 def getFirstMessage(session_api, user_id: int) -> int:
     data = (session_api.messages.getHistory(
         count=1,
@@ -31,7 +32,6 @@ def getMessageCount(session_api, user_id: int) -> int:
 
 
 def getMessageByInternalId(session_api, user_id: int, internal_id: int) -> int:
-
     data = session_api.messages.getByConversationMessageId(
         peer_id=user_id,
         conversation_message_ids=internal_id
@@ -84,24 +84,16 @@ def Parse(token: str, user_id: int, start_message_internal_id: int, count: int) 
         count -= 200
         start_message_internal_id -= 200
 
-    print("Parsing done!")
+    print("All processes are running!")
 
 
 # -------------------------TESTS--------------------------------------------------
 
 if __name__=='__main__':
 
-    token = 'vk1.a.8Jfi6Wk3uA1-yVBGeyYUlWNn2N1xWRYP2FSpWLjxdGF3hvD6aTesB44RMI8CmnBJzbhntFcq7YiZp7yMtMJG5dwIhDuQFlYEcVtFLZowrFjPzyBHIHrdYtSSdoEZha-wyA7vnZN5sqhqTUT4W7G1RSUbYl1WpiuHbgznNKrwiANImYLzGVOmSMbL8OQwQqUJLtupyqvEEHuljitoeAt0LQ'
+    token = ''
 
-
-    # 293536875
-    # 381832378
-    # 464241833
-    # 473379248
-    # 2000000096
 
     user_id = 468941965
-    # print(getMessageCount(session_api, user_id))
-    # a = getMessageExternalId(session_api, user_id, 428)
-    # print(a)
-    Parse(token, user_id, 5000, 3940)
+
+    Parse(token, user_id, 5000, 3990)

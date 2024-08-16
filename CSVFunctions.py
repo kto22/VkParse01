@@ -18,6 +18,8 @@ def mergeCSV() -> None:
                 f_out.writelines(f)
     shutil.rmtree('CSV_temp')
 
+    print("merging done!")
+
 
 #----------------------------TESTS----------------------------
 

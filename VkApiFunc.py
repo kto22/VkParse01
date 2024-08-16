@@ -3,7 +3,6 @@ import vk_api
 import csv
 
 
-
 def getFirstMessage(session_api, user_id: int) -> int:
     data = (session_api.messages.getHistory(
         count=1,
@@ -28,6 +27,7 @@ def getMessageCount(session_api, user_id: int) -> int:
         user_id=user_id
     ))
     return data['count']
+
 
 def getMessageByInternalId(session_api, user_id: int, internal_id: int) -> int:
 

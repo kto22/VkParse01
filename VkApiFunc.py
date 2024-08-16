@@ -29,37 +29,18 @@ def getMessageCount(session_api, user_id: int) -> int:
     ))
     return data['count']
 
+def getMessageByInternalId(session_api, user_id: int, internal_id: int) -> int:
 
-def getMessageExternalId(session_api, user_id: int, internal_id: int) -> int:
-
-    start_message_id = getLastMessage(session_api, user_id)['id']
-    count = getMessageCount(session_api, user_id)
-
-    if 1 > internal_id:
-        print('[!] Error. internal_id must be > 0. First message_id was returned')
-        return getFirstMessage(session_api, user_id)['id']
-    if count < internal_id:
-        print('[!] Error. internal_id must be <= message_count. Last message_id was returned')
-        return getLastMessage(session_api, user_id)['id']
-
-    for c in range(count//200+1):
-
-        history = (session_api.messages.getHistory(
-            count=200,
-            user_id=user_id,
-            start_message_id=start_message_id
-        ))
-        start_message_id = history['items'][-1]['id']
-
-        for i in history['items']:
-            if i['conversation_message_id'] == internal_id:
-                return i['id']
+    data = session_api.messages.getByConversationMessageId(
+        peer_id=user_id,
+        conversation_message_ids=internal_id
+    )
+    return data['items'][0]
 
 
 def Parse(session_api, user_id: int, start_message_id: int, count: int) -> None:
 
-
-    with open(f"{user_id}_file.csv", "w", newline="", encoding="utf-8") as csvfile:
+    with open(f"CSV/{user_id}_file.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=";")
         writer.writerow(['user', 'message', 'in_msg_id'])
 

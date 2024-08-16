@@ -2,7 +2,7 @@
 import multiprocessing
 import vk_api
 import csv
-
+import os
 
 def getFirstMessage(session_api, user_id: int) -> int:
     data = (session_api.messages.getHistory(
@@ -30,42 +30,25 @@ def getMessageCount(session_api, user_id: int) -> int:
     return data['count']
 
 
-def getMessageExternalId(session_api, user_id: int, internal_id: int) -> int:
+def getMessageByInternalId(session_api, user_id: int, internal_id: int) -> int:
 
-    start_message_id = getLastMessage(session_api, user_id)['id']
-    count = getMessageCount(session_api, user_id)
-
-    if 1 > internal_id:
-        print('[!] Error. internal_id must be > 0. First message_id was returned')
-        return getFirstMessage(session_api, user_id)['id']
-    if count < internal_id:
-        print('[!] Error. internal_id must be <= message_count. Last message_id was returned')
-        return getLastMessage(session_api, user_id)['id']
-
-    for c in range(count//200+1):
-
-        history = (session_api.messages.getHistory(
-            count=200,
-            user_id=user_id,
-            start_message_id=start_message_id
-        ))
-        start_message_id = history['items'][-1]['id']
-
-        for i in history['items']:
-            if i['conversation_message_id'] == internal_id:
-                return i['id']
+    data = session_api.messages.getByConversationMessageId(
+        peer_id=user_id,
+        conversation_message_ids=internal_id
+    )
+    return data['items'][0]
 
 
 def messageGeter(token: str, user_id: int, process_id, start_message_internal_id: int) -> None:
     vk_session = vk_api.VkApi(token=token)
     session_api = vk_session.get_api()
 
-    start_message_id = session_api.messages.getByConversationMessageId(
-        peer_id=user_id,
-        conversation_message_ids=start_message_internal_id
-    )['items'][0]['id']
+    start_message_id = getMessageByInternalId(session_api, user_id, start_message_internal_id)['id']
 
-    with open(f"{process_id}_file.csv", "w", newline="", encoding="utf-8") as csvfile:
+    if not os.path.isdir('CSV_temp'):
+        os.mkdir('CSV_temp')
+
+    with open(f"CSV_temp/{process_id}_file.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=";")
 
         history = (session_api.messages.getHistory(
@@ -74,12 +57,16 @@ def messageGeter(token: str, user_id: int, process_id, start_message_internal_id
             start_message_id=start_message_id
         ))
 
-        for i in history['items']:
-            message = i['text']
+        for c in range(200):
+            i = history['items'][c]
+            message = ''.join(i['text'].splitlines())
             id = i['conversation_message_id']
             user = i['from_id']
 
             writer.writerow([user, message, id])
+            if id <= start_message_internal_id-199:
+                break
+
     print(f'the process {process_id} has completed its work!')
 
 
@@ -91,7 +78,7 @@ def Parse(token: str, user_id: int, start_message_internal_id: int, count: int) 
     if message_count < count:
         count = message_count+1
 
-    for process_id in range(count//199+1):
+    for process_id in range(count//200+1):
         multiprocessing.Process(target=messageGeter, args=(token, user_id, process_id, start_message_internal_id)).start()
         print(f'the process {process_id} has started its work!')
         count -= 200
@@ -104,7 +91,8 @@ def Parse(token: str, user_id: int, start_message_internal_id: int, count: int) 
 
 if __name__=='__main__':
 
-    token = 'vk1.a.wdpsVDI88ySXSzQCQj9OhUOlzS4Ose9WHIxONT9HSE5b0oPkJ14WWChydSav7rSud645gRoPaqqj5162efTUvl1idfLlcKPRUA2xyZWy5_j31UzcyVx15hkFAH9WpUxmcokmZA0XF1LV9hWYH4Lj1Zqjx3MnYR2zlV_5IA6qoQrRwP6YxHEB5iXUnA4mQvz7k-OMz46HwfZUI_U8pbKFvg'
+    token = 'vk1.a.8Jfi6Wk3uA1-yVBGeyYUlWNn2N1xWRYP2FSpWLjxdGF3hvD6aTesB44RMI8CmnBJzbhntFcq7YiZp7yMtMJG5dwIhDuQFlYEcVtFLZowrFjPzyBHIHrdYtSSdoEZha-wyA7vnZN5sqhqTUT4W7G1RSUbYl1WpiuHbgznNKrwiANImYLzGVOmSMbL8OQwQqUJLtupyqvEEHuljitoeAt0LQ'
+
 
     # 293536875
     # 381832378
@@ -116,5 +104,4 @@ if __name__=='__main__':
     # print(getMessageCount(session_api, user_id))
     # a = getMessageExternalId(session_api, user_id, 428)
     # print(a)
-
-    Parse(token, user_id, 1800, 1591)
+    Parse(token, user_id, 5000, 3940)

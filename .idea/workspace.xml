@@ -5,11 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b5acd21-68ad-4871-a58d-51c9abb8382a" name="Changes" comment="test_commit(third)">
-      <change afterPath="$PROJECT_DIR$/new_VkApiFunc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VkParse01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VkParse01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV/out.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/0_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/10_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/11_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/12_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/13_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/14_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/15_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/16_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/17_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/18_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/19_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/1_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/2_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/3_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/4_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/5_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/6_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/7_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/8_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/9_file.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2000000096_file.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/381832378_file.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSVFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/CSVFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VkApiFunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/VkApiFunc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VkApiFunc_mprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/VkApiFunc_mprocess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,29 +71,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.TokenGeter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.VkApiFunc.executor&quot;: &quot;Run&quot;,
-    &quot;Python.new_VkApiFunc.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hesoy/Downloads/vk-get-access-token-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.CSVFunctions (1).executor": "Run",
+    "Python.CSVFunctions.executor": "Run",
+    "Python.TokenGeter.executor": "Run",
+    "Python.VkApiFunc.executor": "Run",
+    "Python.VkApiFunc_mprocess.executor": "Run",
+    "Python.new_VkApiFunc.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/hesoy/Downloads/vk-get-access-token-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python.new_VkApiFunc">
-    <configuration name="TokenGeter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\VkParse01" />
+      <recent name="D:\projects\VkParse01\CSV" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.CSVFunctions (1)">
+    <configuration name="CSVFunctions (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VkParse01" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,7 +116,53 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TokenGeter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CSVFunctions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CSVFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VkParse01" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\projects\VkParse01\CSVFunctions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CSVFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VkParse01" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CSV" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\projects\VkParse01\CSVFunctions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,6 +194,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="VkApiFunc_mprocess" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VkParse01" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VkApiFunc_mprocess.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="new_VkApiFunc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VkParse01" />
       <option name="ENV_FILES" value="" />
@@ -140,35 +240,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="VkParse01" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CSVFunctions (1)" />
+        <item itemvalue="Python.VkApiFunc_mprocess" />
+        <item itemvalue="Python.CSVFunctions (1)" />
+        <item itemvalue="Python.CSVFunctions" />
         <item itemvalue="Python.new_VkApiFunc" />
-        <item itemvalue="Python.VkApiFunc" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.TokenGeter" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +274,8 @@
       <workItem from="1723475011090" duration="930000" />
       <workItem from="1723476350208" duration="12709000" />
       <workItem from="1723536848137" duration="14888000" />
+      <workItem from="1723705589012" duration="1311000" />
+      <workItem from="1723751481239" duration="13030000" />
     </task>
     <servers />
   </component>
@@ -220,9 +300,12 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/VkParse01$CSVFunctions__1_.coverage" NAME="CSVFunctions (1) Coverage Results" MODIFIED="1723766737946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$test.coverage" NAME="test Coverage Results" MODIFIED="1723476736877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$TokenGeter.coverage" NAME="TokenGeter Coverage Results" MODIFIED="1723362565808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/VkParse01$VkApiFunc_mprocess.coverage" NAME="VkApiFunc_mprocess Coverage Results" MODIFIED="1723766727953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$VkApiFunc.coverage" NAME="VkApiFunc Coverage Results" MODIFIED="1723476804557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$new_VkApiFunc.coverage" NAME="new_VkApiFunc Coverage Results" MODIFIED="1723569053138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/VkParse01$CSVFunctions.coverage" NAME="CSVFunctions Coverage Results" MODIFIED="1723762936691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

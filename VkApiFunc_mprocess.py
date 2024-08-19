@@ -3,6 +3,8 @@ import multiprocessing
 import vk_api
 import csv
 import os
+import time
+from vk_api.exceptions import VkRequestsPoolException
 
 
 def getFirstMessage(session_api, user_id: int) -> int:
@@ -50,7 +52,6 @@ def messageGeter(token: str, user_id: int, process_id, start_message_internal_id
 
     with open(f"CSV_temp/{process_id}_file.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, delimiter=";")
-
         history = (session_api.messages.getHistory(
             count=200,
             user_id=user_id,
@@ -64,8 +65,7 @@ def messageGeter(token: str, user_id: int, process_id, start_message_internal_id
             user = i['from_id']
 
             writer.writerow([user, message, id])
-            if id <= start_message_internal_id-199:
-                break
+
 
     print(f'the process {process_id} has completed its work!')
 
@@ -93,7 +93,6 @@ if __name__=='__main__':
 
     token = ''
 
+    user_id = 263703091
 
-    user_id = 468941965
-
-    Parse(token, user_id, 5000, 3990)
+    Parse(token, user_id, 61000, 59999)

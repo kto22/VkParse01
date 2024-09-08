@@ -1,83 +1,107 @@
 
-from tkinter import filedialog, PhotoImage, Label, Frame, Entry, Button, Tk
+from tkinter import filedialog, PhotoImage, Label, Frame, Entry, Button, Tk, END
 import os
 
 
-class App:
+# Input boxes class
+class InputBox:
 
-    def __init__(self, master):
+    __slots__ = ("text", "frame_top", "ent_widget")
 
-        our_img = PhotoImage(file="kona2.gif")
+    def __init__(self, frame_top, text) -> None:
+        self.text = text
+        self.frame_top = frame_top
+        self.ent_widget = Entry(frame_top, bg='white', font=30)
+        self.ent_widget.config(fg='grey')
+        self.ent_widget.insert(0, text)
+        self.ent_widget.pack(side='top', fill='x')
+        global resp
+        resp = ""
+
+    def get(self):
+        resp = self.ent_widget.get()
+        self.frame_top.destroy()
+        return resp
+
+
+    def handle_focus_in(self, master) -> None:
+        if self.ent_widget.get() == '' or self.ent_widget.get() == self.text:
+            self.ent_widget.delete(0, END)
+            self.ent_widget.config(fg='black')
+
+    def handle_focus_out(self, master) -> None:
+        if self.ent_widget.get() == '':
+            self.ent_widget.delete(0, END)
+            self.ent_widget.config(fg='grey')
+            self.ent_widget.insert(0, self.text)
+
+    def next_widget(self, master) -> None:
+        self.ent_widget.tk_focusNext().focus()
+
+    def previous_widget(self, master) -> None:
+        self.ent_widget.tk_focusPrev().focus()
+
+    def run(self) -> None:
+        self.ent_widget.bind("<FocusIn>", self.handle_focus_in)
+        self.ent_widget.bind("<FocusOut>", self.handle_focus_out)
+        self.ent_widget.bind("<Down>", self.next_widget)
+        self.ent_widget.bind("<Up>", self.previous_widget)
+
+
+# User interface class
+class UI:
+
+    __slots__ = ("token", "username", "friend_name", "friend_id", "start_mes_id", "mes_count", "user_dir")
+
+    def __init__(self, master) -> None:
+
+        # Main frame
+        our_img = PhotoImage(file="resources/kona2.gif")
         our_img = our_img.subsample(5, 5)
         our_label = Label(root)
         our_label.image = our_img
         our_label['image'] = our_label.image
-        our_label.place(x=0, y=0)
+        our_label.place(x=0, y=18)
 
         frame_top = Frame(root, bg='#000000', bd=5)
         lbl = Label(root, text="nya~ nipaaa~~ (づ｡◕‿‿◕｡)づ", font=("Arial Bold", 20))
         lbl.grid(column=0, row=0)
 
-        frame_top.place(relx=0, rely=0.79, relwidth=1, relheight=0.21)
+        frame_top.place(relx=0, rely=0.60, relwidth=1, relheight=0.41)
 
-        self.direct = Entry(frame_top, bg='white', font=30)
-        self.direct.pack()
+        # Input Boxes
+        self.token = InputBox(frame_top, 'Your token')
+        self.token.run()
 
-        btn = Button(frame_top, text='Nipaaah~~~', command=self.main)
+        self.username = InputBox(frame_top, 'Your name')
+        self.username.run()
+
+        self.friend_name = InputBox(frame_top, 'Friend name')
+        self.friend_name.run()
+
+        self.friend_id = InputBox(frame_top, 'Friend id')
+        self.friend_id.run()
+
+        self.start_mes_id = InputBox(frame_top, 'Start message id')
+        self.start_mes_id.run()
+
+        self.mes_count = InputBox(frame_top, 'Messages count')
+        self.mes_count.run()
+
+        self.user_dir = InputBox(frame_top, 'Directory to save output')
+        self.user_dir.run()
+
+        # Buttons
+        btn = Button(frame_top, text='Nuclear bomb to USA', command=self.token.get)
         btn.pack(padx=2, pady=12)
 
-    def main(self):
-
-        user_dir = self.direct.get()
-        if not os.path.isdir(f"{user_dir}"):
-            user_dir = filedialog.askdirectory()
-
-        check_dir(f"{user_dir}/sorted00")
-        check_dir(f"{user_dir}/sorted00/anime")
-        check_dir(f"{user_dir}/sorted00/not_anime")
-
-        if os.path.isdir(f'{user_dir}/temp00'):
-            os.rmdir(f'{user_dir}/temp00')
-
-        os.mkdir(f'{user_dir}/temp00')
-        os.mkdir(f'{user_dir}/temp00/temp01')
-
-        t1 = time()
-
-        for filename in os.listdir(user_dir):
-            if filename.lower().endswith(('.png', '.jpg', '.jpeg', 'tiff')):
-                os.replace(f'{user_dir}/{filename}', f'{user_dir}/temp00/temp01/temp.jpg')
-                datagen = ImageDataGenerator(rescale=1. / 255)
-                img_generator = datagen.flow_from_directory(f'{user_dir}/temp00',
-                                                            target_size=(150, 150),
-                                                            batch_size=1,
-                                                            class_mode='binary')
-
-                predictions = model.predict(img_generator)
-
-                pred_num = predictions[0][0]
-                print(pred_num)
-
-                if float(pred_num) < 0.4:
-                    os.replace(f'{user_dir}/temp00/temp01/temp.jpg', f'{user_dir}/sorted00/anime/{filename}')
-                else:
-                    os.replace(f'{user_dir}/temp00/temp01/temp.jpg', f'{user_dir}/sorted00/not_anime/{filename}')
-
-        os.rmdir(f'{user_dir}/temp00/temp01')
-        os.rmdir(f'{user_dir}/temp00')
-        print(time()-t1)
 
 
 root = Tk()
-
 root['bg'] = '#fafafa'
-
-root.title('Neuronime!')
-
-root.geometry('355x374')
-
+root.title('VkParse!')
+root.geometry('355x510')
 root.resizable(width=False, height=False)
-
-app = App(root)
-
+app = UI(root)
 root.mainloop()
+

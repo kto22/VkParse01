@@ -7,11 +7,15 @@ import csv
 
 def mergeCSV() -> None:
 
-    if not os.path.isdir('CSV'):
+    if os.path.isdir('CSV'):
+        shutil.rmtree('CSV')
+        os.mkdir('CSV')
+    else:
         os.mkdir('CSV')
 
     files = glob.glob(f"CSV_temp/*_file.csv")
     print(files)
+
 
     with open(f"CSV/out.csv", "ab") as f_out:
         for num in range(len(files)):
@@ -25,7 +29,7 @@ def mergeCSV() -> None:
     print("merging done!")
 
 
-def repeatCount(process_index: int) -> int:
+def repeat_count(process_index: int) -> int:
 
     with open(f"CSV_temp/{process_index}_file.csv", mode='r', encoding='utf8') as file:
         csvFile = csv.reader(file)
@@ -41,19 +45,16 @@ def repeatCount(process_index: int) -> int:
                 count += 1
             num -= 1
     return count-1
+def get_rows_count(dir: str) -> int:
+    with open(dir, mode='r', encoding='utf8') as file:
+        row_count = sum(1 for row in file)
+        return row_count
 
-
-def repeatDelete(process_index: int, iters: int) -> None:
+def delete_from_end(dir: str, iters: int) -> None:
     for _ in range(iters):
-        f = open(f'CSV_temp/{process_index}_file.csv', "r+", encoding='utf8')
+        f = open(dir, "r+", encoding='utf8')
         lines = f.readlines()
         lines.pop()
-        f = open(f'CSV_temp/{process_index}_file.csv', "w+", encoding='utf8')
+        f = open(dir, "w+", encoding='utf8')
         f.writelines(lines)
 
-
-#----------------------------TESTS----------------------------
-
-#mergeCSV()
-
-#repeatDelete(89, repeatCount(89))

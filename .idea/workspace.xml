@@ -8,23 +8,11 @@
       <change afterPath="$PROJECT_DIR$/CSV/final.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/CSV/out.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/CSV_temp/0_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/10_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/11_file.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/CSV_temp/1_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/2_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/3_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/4_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/5_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/6_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/7_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/8_file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV_temp/9_file.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VkParse01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VkParse01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSVFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/CSVFunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JSON/InputCache.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/InputCache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VkApiFunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/VkApiFunc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +92,7 @@
       <recent name="D:\projects\VkParse01\CSV" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test">
     <configuration name="CSVFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VkParse01" />
       <option name="ENV_FILES" value="" />
@@ -222,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.CSVFunctions" />
         <item itemvalue="Python.UI" />
         <item itemvalue="Python.VkApiFunc" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>

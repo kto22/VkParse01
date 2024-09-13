@@ -3,7 +3,6 @@ import glob
 import os
 import shutil
 import csv
-import sys
 
 
 def mergeCSV() -> None:
@@ -30,7 +29,6 @@ def mergeCSV() -> None:
 
 
 def repeat_count(process_index: int) -> int:
-
     with open(f"CSV_temp/{process_index}_file.csv", mode='r', encoding='utf8') as file:
         csvFile = csv.reader(file)
         for lines in csvFile:
@@ -46,10 +44,12 @@ def repeat_count(process_index: int) -> int:
             num -= 1
     return count-1
 
+
 def get_rows_count(dir: str) -> int:
     with open(dir, mode='r', encoding='utf8') as file:
         row_count = sum(1 for row in file)
         return row_count
+
 
 def delete_from_end(dir: str, iters: int) -> None:
     for _ in range(iters):
@@ -58,6 +58,7 @@ def delete_from_end(dir: str, iters: int) -> None:
         lines.pop()
         f = open(dir, "w+", encoding='utf8')
         f.writelines(lines)
+
 
 def reverse_csv(filename: str, out):
     # read the file

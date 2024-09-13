@@ -67,7 +67,6 @@ class VkParser:
         print('start merging')
 
 
-
 # Class of parsing processes
 class ParseProcess(multiprocessing.Process):
     __slots__ = ("process_id", "token", "user_id", "start_message_internal_id")
@@ -120,18 +119,3 @@ class ParseProcess(multiprocessing.Process):
         delete_from_end(f'CSV_temp/{self.process_id}_file.csv', 200-iter_count)
         print(f'the process {self.process_id} has completed its work!')
 
-
-# -------------------------FAST-TESTS--------------------------------------------------
-'''
-if __name__ == '__main__':
-
-    token = ''
-
-
-    user_id = 263703091
-
-    parse_vk = VkParser(token, user_id)
-    parse_vk.Parse(61000, 59999)
-    print(parse_vk.get_message_count())
-
-'''

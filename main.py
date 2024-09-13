@@ -1,6 +1,6 @@
 from UI import *
 from VkApiFunc import *
-from CSVFunctions import delete_from_end, get_rows_count
+from CSVFunctions import delete_from_end, get_rows_count, reverse_csv
 
 
 if __name__ == '__main__':
@@ -16,5 +16,6 @@ if __name__ == '__main__':
     parse_vk.Parse(start_message, message_count)
     print(parse_vk.get_message_count())
     delete_from_end('CSV/out.csv', get_rows_count('CSV/out.csv')-message_count)
+    reverse_csv('CSV/out.csv', 'CSV/final.csv')
     print('DONE!!!')
 

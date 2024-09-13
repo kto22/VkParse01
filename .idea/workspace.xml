@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b5acd21-68ad-4871-a58d-51c9abb8382a" name="Changes" comment="deleted test files">
+      <change afterPath="$PROJECT_DIR$/CSV/final.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV/out.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/0_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/10_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/11_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/1_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/2_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/3_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/4_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/5_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/6_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/7_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/8_file.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSV_temp/9_file.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VkParse01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VkParse01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSVFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/CSVFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON/InputCache.json" beforeDir="false" afterPath="$PROJECT_DIR$/JSON/InputCache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +51,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/kto22/VkParse01.git&quot;,
-    &quot;accountId&quot;: &quot;07febf11-7606-4e46-a411-775e902184c0&quot;
+    &quot;accountId&quot;: &quot;a79978c2-2ecf-456e-b900-4ffe53825aef&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -45,36 +65,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.CSVFunctions (1).executor": "Run",
-    "Python.CSVFunctions.executor": "Run",
-    "Python.TokenGeter.executor": "Run",
-    "Python.UI.executor": "Run",
-    "Python.VkApiFunc.executor": "Run",
-    "Python.VkApiFunc_mprocess.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.merge.executor": "Run",
-    "Python.new_VkApiFunc.executor": "Run",
-    "Python.new_VkApiFunc_mprocess.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test1.executor": "Run",
-    "Python.tests.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/kurochkabroilerbarbaris/projects/py_repos/VkParse01/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.CSVFunctions (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.CSVFunctions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TokenGeter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.UI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.VkApiFunc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.VkApiFunc_mprocess.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.merge.executor&quot;: &quot;Run&quot;,
+    &quot;Python.new_VkApiFunc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.new_VkApiFunc_mprocess.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/kurochkabroilerbarbaris/projects/py_repos/VkParse01/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\kurochkabroilerbarbaris\projects\py_repos\VkParse01\resources" />
@@ -204,8 +224,8 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.CSVFunctions" />
-        <item itemvalue="Python.VkApiFunc" />
         <item itemvalue="Python.UI" />
+        <item itemvalue="Python.VkApiFunc" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -213,8 +233,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
-        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
       </set>
     </attachedChunks>
   </component>

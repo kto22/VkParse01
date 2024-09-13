@@ -1,5 +1,4 @@
 from tkinter import *
-import keyboard
 import json
 import webbrowser
 
@@ -44,6 +43,7 @@ class InputBox:
 
 
 class InputForm:
+
     def __init__(self):
         self.response = []
 
@@ -73,6 +73,9 @@ class InputForm:
 
             with open('JSON/InputCache.json', 'w') as f:
                 json.dump(data, f, ensure_ascii=False, indent=4)
+
+        def out(a):
+            master.destroy()
 
         master = Tk()
         master['bg'] = '#fafafa'
@@ -126,8 +129,8 @@ class InputForm:
         for i in self.boxes:
             i.run()
 
-        keyboard.add_hotkey(hotkey='esc', callback=master.destroy)
-        keyboard.add_hotkey(hotkey='Enter', callback=get_data)
+        master.bind('<Escape>', out)
+        #master.bind('<Return>', get_data)
 
         mainloop()
 

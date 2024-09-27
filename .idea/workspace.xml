@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b5acd21-68ad-4871-a58d-51c9abb8382a" name="Changes" comment="deleted test files">
-      <change afterPath="$PROJECT_DIR$/DataBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/kurochkabroilerbarbaris/projects/py_repos/VkParse01/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kona/Downloads/guitarix-git&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -281,7 +281,10 @@
       <workItem from="1726731835778" duration="2210000" />
       <workItem from="1726770299432" duration="1887000" />
       <workItem from="1726816534583" duration="3609000" />
-      <workItem from="1726828889627" duration="3860000" />
+      <workItem from="1726828889627" duration="4452000" />
+      <workItem from="1726914918022" duration="99000" />
+      <workItem from="1726946539291" duration="2235000" />
+      <workItem from="1727096147504" duration="3207000" />
     </task>
     <servers />
   </component>
@@ -321,7 +324,7 @@
     <SUITE FILE_PATH="coverage/VkParse01$merge.coverage" NAME="merge Coverage Results" MODIFIED="1724104868546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$CSVFunctions__1_.coverage" NAME="CSVFunctions (1) Coverage Results" MODIFIED="1724105395092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$VkApiFunc_mprocess.coverage" NAME="VkApiFunc_mprocess Coverage Results" MODIFIED="1724083592575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/VkParse01$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1726833432459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/VkParse01$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1727099607292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1724099585279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$CSVFunctions.coverage" NAME="CSVFunctions Coverage Results" MODIFIED="1726585288086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/VkParse01$main.coverage" NAME="main Coverage Results" MODIFIED="1726653275512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

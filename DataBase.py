@@ -6,6 +6,8 @@ import psycopg2.errors
 
 class DataBase:
 
+    __slots__ = ("user_name", "password", "db_name", "host", "con", "cur")
+
     def __init__(self, user_name, password, db_name, host):
         self.user_name = user_name
         self.password = password
@@ -16,14 +18,14 @@ class DataBase:
                                     user=self.user_name,
                                     host=self.host,
                                     password=self.password)
-        self.con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)  # <-- ADD THIS LINE
+        self.con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         self.cur = self.con.cursor()
+
 
     def create_db(self) -> None:
         try:
-            self.cur.execute(sql.SQL("CREATE DATABASE {}").format(
-                    sql.Identifier(self.db_name))
-            )
+            self.cur.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(self.db_name)))
+            print(f"Database {self.db_name} has created successfully")
         except psycopg2.errors.DuplicateDatabase:
             print(f"Database {self.db_name} already exists. Nothing was changed.")
 
@@ -31,19 +33,22 @@ class DataBase:
                                     user=self.user_name,
                                     host=self.host,
                                     password=self.password)
-        self.con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)  # <-- ADD THIS LINE
+        self.con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         self.cur = self.con.cursor()
+
 
     def drop_db(self) -> None:
         self.con = psycopg2.connect(dbname='postgres',
                                     user=self.user_name,
                                     host=self.host,
                                     password=self.password)
-        self.con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)  # <-- ADD THIS LINE
+        self.con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         self.cur = self.con.cursor()
-        self.cur.execute(sql.SQL("DROP DATABASE {} WITH (FROCE)").format(
-                         sql.Identifier(self.db_name)))
-        self.con.close()
+        try:
+            self.cur.execute(sql.SQL("DROP DATABASE {} WITH (FORCE)").format(sql.Identifier(self.db_name)))
+        except psycopg2.errors.InvalidCatalogName:
+            print(f"Table {self.db_name} doesnt exists. Nothing was changed.")
+
 
     def create_table(self, table_name: str, columns: list) -> None:
         sql_prompt = (f"CREATE TABLE {table_name}\n"
@@ -54,23 +59,38 @@ class DataBase:
         sql_prompt += ");"
         try:
             self.cur.execute(sql.SQL(sql_prompt))
+            print(f"Table {table_name} has created successfully")
         except psycopg2.errors.DuplicateTable:
             print(f"Table {table_name} already exists. Nothing was changed.")
 
+
     def drop_table(self, table_name: str) -> None:
         try:
-            self.cur.execute(sql.SQL(f"DROP TABLE {table_name}"))
+            self.cur.execute(sql.SQL("DROP TABLE {}").format(sql.Identifier(table_name)))
+            print(f"Table {table_name} has deleted successfully")
         except psycopg2.errors.UndefinedTable:
             print(f"Table {table_name} doesnt exists. Nothing was changed.")
 
-    def add_column(self, table_name: str, columns: list) -> None:
-        for column in columns:
-            self.cur.execute(sql.SQL(f"ALTER TABLE {table_name} ADD COLUMN {column}"))
 
+    def add_columns(self, table_name: str, columns: list) -> None:
+        for column in columns:
+            try:
+                self.cur.execute(sql.SQL(f"ALTER TABLE {table_name} ADD COLUMN {column[0]} {column[1]}"))
+            except psycopg2.errors.DuplicateColumn:
+                print(f"Column {column[0]} already exists. Nothing was changed.")
+        print(f"Columns has added successfully")
+
+
+# --------------------------------------------FAST-TESTS-------------------------------------------------
 
 columns = [['a', 'int'], ['b', 'varchar(64)']]
+new_columns = [['kaokoak', 'int']]
 
 db = DataBase('postgres', '123', 'vk_data', '127.0.0.1')
-
+db.drop_db()
 db.create_db()
-db.create_table('obed', columns)
+db.create_table('oudap', columns)
+db.add_columns('oudap', new_columns)
+db.drop_table('oudap')
+db.drop_db()
+db.drop_db()

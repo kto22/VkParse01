@@ -5,7 +5,6 @@ import csv
 import os
 from CSVFunctions import delete_from_end, mergeCSV
 from time import sleep
-from math import sin
 
 
 # Parser logic and its methods
@@ -49,20 +48,18 @@ class VkParser:
         )
         return data['items'][0]['id']
 
-    def Parse(self, start_message_internal_id: int, count: int) -> None:
-
+    def parse(self, start_message_internal_id: int, count: int) -> None:
         message_count = self.get_message_count()
         if message_count < count:
             count = message_count + 1
         rng = count // 200 + 1
         for process_id in range(rng):
+            while len(multiprocessing.active_children()) > 2:
+                sleep(0.5)
             ParseProcess(process_id, self.token, self.user_id, start_message_internal_id).start()
             print(f'the process {process_id} has started its work!')
             count -= 200
             start_message_internal_id -= 200
-            slp = 0.5 + 1 * sin(3.14 * (process_id / rng) / 2)
-            print(slp)
-            sleep(slp)
 
         print("All processes are running!")
         while not os.path.isfile(f"CSV_temp/{process_id}_file.csv"):

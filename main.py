@@ -17,7 +17,7 @@ if __name__ == '__main__':
     message_count = int(data[5])
 
     parse_vk = VkParser(token, user_id)
-    parse_vk.Parse(start_message, message_count)
+    parse_vk.parse(start_message, message_count)
     print(parse_vk.get_message_count())
     delete_from_end('CSV/out.csv', get_rows_count('CSV/out.csv')-message_count)
     reverse_csv('CSV/out.csv', 'CSV/final.csv')

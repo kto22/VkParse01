@@ -1,3 +1,4 @@
+import os
 from UI import *
 from VkApiFunc import *
 from CSVFunctions import delete_from_end, get_rows_count, reverse_csv
@@ -20,6 +21,7 @@ if __name__ == '__main__':
     print(parse_vk.get_message_count())
     delete_from_end('CSV/out.csv', get_rows_count('CSV/out.csv')-message_count)
     reverse_csv('CSV/out.csv', 'CSV/final.csv')
+    os.remove('CSV/out.csv')
     print('DONE!!!')
 
     if sys.platform == 'linux':

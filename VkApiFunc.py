@@ -3,7 +3,7 @@ import multiprocessing
 import vk_api
 import csv
 import os
-from CSVFunctions import delete_from_end, mergeCSV
+from CSVFunctions import delete_from_end, merge_csv
 from time import sleep
 
 
@@ -64,7 +64,7 @@ class VkParser:
         print("All processes are running!")
         while not os.path.isfile(f"CSV_temp/{process_id}_file.csv"):
             sleep(5)
-        mergeCSV()
+        merge_csv()
         print('start merging')
 
 

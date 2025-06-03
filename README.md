@@ -23,7 +23,7 @@ A Python application for parsing and exporting VK (VKontakte) messages from conv
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/kto22/VkParse01.git
 cd VkParse01
 ```
 
@@ -81,10 +81,3 @@ The program generates the following files in the Output directory:
 - Temporary files are automatically cleaned up after processing
 - The output directory will be automatically opened after completion
 
-## License
-
-[Add your license information here]
-
-## Contributing
-
-[Add contribution guidelines if applicable] 
